@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - ProctorX</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f1f1f1;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 100px 20px 40px; /* Add space for fixed navbar */
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-family: sans-serif;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-left, .about-right {
+      background-color: #1a1a1a;
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1 1 400px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    }
+
+    .about-left h6 {
+      color: #f97316;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .about-left h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-left p {
+      color: #cccccc;
+      line-height: 1.7;
+    }
+
+    .about-right img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 25px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .stat-box {
+      background-color: #262626;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 1.8rem;
+      color: #10b981;
+    }
+
+    .stat-box p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #000000;">
+  <a style="color: #ffffff;text-decoration: none;" href="/">
+    <font face="Comic sans MS" size="5">Online Quiz</font>
+  </a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="navbar-nav">
+      <a href="/" class="nav-item nav-link active" style="padding-left: 30px;">Home</a>
+      <a href="/teacher/teacherclick" class="nav-item nav-link">Teacher</a>
+      <a href="/student/studentclick" class="nav-item nav-link">Student</a>
+      <a href="/adminclick" class="nav-item nav-link">Admin</a>
+    </div>
+    <div class="navbar-nav">
+      <a href="/aboutus" class="nav-item nav-link">About Us</a>
+      <a href="/contactus" class="nav-item nav-link">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- About Us Content -->
+<div class="about-container">
+
+  <!-- Left Text Block -->
+  <div class="about-left">
+    <h6>Our Mission</h6>
+    <h1>Secure. Smart. Seamless Proctoring</h1>
+    <p>
+      At ProctorX, our mission is to redefine online examination security using intelligent monitoring and AI. What started as a solution to combat academic dishonesty has evolved into a powerful platform trusted by thousands of institutions worldwide.
+      <br><br>
+      Our team of developers, educators, and data scientists work continuously to create a seamless experience for candidates while ensuring integrity for institutions. ProctorX is committed to a future where fair evaluation is just a click away.
+    </p>
+  </div>
+
+  <!-- Right Stats + Image -->
+  <div class="about-right">
+    <img src="{% static 'aboutus.png' %}" alt="Proctoring Session Image">
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <h3>3.5</h3>
+        <p>Years in Service</p>
+      </div>
+      <div class="stat-box">
+        <h3>23</h3>
+        <p>Countries Covered</p>
+      </div>
+      <div class="stat-box">
+        <h3>100K+</h3>
+        <p>Verified Users</p>
+      </div>
+      <div class="stat-box">
+        <h3>950+</h3>
+        <p>Positive Reviews</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

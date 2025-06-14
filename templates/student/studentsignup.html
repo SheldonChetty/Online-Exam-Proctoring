@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Student Signup - ProctorX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #b92b27, #1565c0);
+      color: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .signup-card {
+      background-color: #191919;
+      padding: 50px;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .signup-card h3 {
+      text-align: center;
+      color: #2ecc71;
+      margin-bottom: 30px;
+    }
+
+    label {
+      color: #2ecc71;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input.form-control {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #3498db;
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+    }
+
+    input.form-control:focus {
+      border-color: #2ecc71;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: transparent;
+      border: 2px solid #2ecc71;
+      color: #2ecc71;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .btn-primary:hover {
+      background-color: #2ecc71;
+      color: #000000;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .signup-card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% include "quiz/navbar.html" %}
+
+  <div class="container">
+    <div class="signup-card">
+      <h3>Student Signup</h3>
+      <form method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="username">Username</label>
+        {% render_field userForm.username|attr:'required:true' class="form-control" placeholder="Username" %}
+
+        <label for="password">Password</label>
+        {% render_field userForm.password|attr:'required:true' class="form-control" placeholder="Password" %}
+
+        <label for="first_name">First Name</label>
+        {% render_field userForm.first_name|attr:'required:true' class="form-control" placeholder="First Name" %}
+
+        <label for="last_name">Last Name</label>
+        {% render_field userForm.last_name|attr:'required:true' class="form-control" placeholder="Last Name" %}
+
+        <label for="mobile">Mobile</label>
+        {% render_field studentForm.mobile|attr:'required:true' class="form-control" placeholder="Mobile" %}
+
+        <label for="address">Address</label>
+        {% render_field studentForm.address|attr:'required:true' class="form-control" placeholder="Address" %}
+
+        <label for="profile_pic">Profile Picture</label>
+        {% render_field studentForm.profile_pic|attr:'required:true' class="form-control" %}
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
